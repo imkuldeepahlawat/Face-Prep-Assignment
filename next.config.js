@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // next.config.js
 module.exports = {
     webpack: (config) => {
@@ -11,9 +10,3 @@ module.exports = {
     },
   };
   
-=======
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
-
-module.exports = nextConfig
->>>>>>> e80da20fd47709694cf5306c779c6eb7d47088e3
