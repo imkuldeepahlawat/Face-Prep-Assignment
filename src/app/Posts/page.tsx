@@ -52,9 +52,12 @@ const Page = () => {
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", handleOnScroll);
     }
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("scroll", handleOnScroll);
+      }
+    };
   }, [userPage]);
-
-  // window.addEventListener("scroll", handleOnScroll);
 
   return (
     <div className="flex flex-col">
