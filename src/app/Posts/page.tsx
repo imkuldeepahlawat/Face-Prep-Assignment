@@ -42,7 +42,6 @@ const Page = () => {
 
     fetchData();
 
-    
     const handleOnScroll = () => {
       setUserPage(userPage + 1);
       setProcessbar(true);
@@ -53,12 +52,6 @@ const Page = () => {
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", handleOnScroll);
     }
-
-    return () => {
-      if (typeof window !== "undefined") {
-        window.removeEventListener("scroll", handleOnScroll);
-      }
-    };
   }, [userPage]);
 
   // window.addEventListener("scroll", handleOnScroll);

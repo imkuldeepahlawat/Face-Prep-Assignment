@@ -9,7 +9,6 @@ import {
   Id,
   Picture,
 } from "../Types/Cards.types";
-import Image from "next/image";
 
 type CardProps = {
   gender: string;
@@ -65,7 +64,7 @@ const Card = (props: CardProps): React.JSX.Element => {
           </span>{" "}
         </h3>
       </div>
-      <Image src={props.picture.large} alt={props.name.first} />
+      <img src={props.picture.large} alt={props.name.first} />
       <div className="flex justify-between m-2 p-2">
         <FavoriteBorderIcon />
         <h3 className="text-indigo-500">
