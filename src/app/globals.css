@@ -6,8 +6,9 @@
 *{
   font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
-  color: white;
-  background-color: black;
+  /* color: white;
+  background-color: black; */
+  overflow-x: hidden;
 }
 body {
   

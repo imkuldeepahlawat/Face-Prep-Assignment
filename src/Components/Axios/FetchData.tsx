@@ -17,7 +17,7 @@ export const getUserData = async (params: GetUserDataParams) => {
   try {
     const response = await axios.get(endpoint, {
       params: {
-        results: 32,
+        results: 8,
         page: params.pageNumber,
       },
     });
