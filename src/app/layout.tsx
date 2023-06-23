@@ -1,5 +1,5 @@
-"use client";
-import Header from "@/Components/Header/Header";
+
+
 import "./globals.css";
 
 
