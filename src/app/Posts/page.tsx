@@ -15,10 +15,10 @@ const Page = () => {
   const [userData, setUserData] = useState<any[]>([]); // Specify the type as 'empty array'
   const [userPage, setUserPage] = useState<number>(0); // Specify the type as 'number'
   const [processBar, setProcessbar] = useState<boolean>(false); // Specify the type as 'number'
-  const [logincheck, setLoginCheck] = useState<string>('');
+  const [logincheck, setLoginCheck] = useState<string>("");
 
   useEffect(() => {
-    const username = localStorage.getItem("username") ?? '';
+    const username = localStorage.getItem("username") ?? "";
     setLoginCheck(username);
   }, []);
 
@@ -41,15 +41,28 @@ const Page = () => {
     };
 
     fetchData();
+
+    
+    const handleOnScroll = () => {
+      setUserPage(userPage + 1);
+      setProcessbar(true);
+      setTimeout(() => {
+        setProcessbar(false);
+      }, 1000);
+    };
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleOnScroll);
+    }
+
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("scroll", handleOnScroll);
+      }
+    };
   }, [userPage]);
-  const handleOnScroll = () => {
-    setUserPage(userPage + 1);
-    setProcessbar(true);
-    setTimeout(() => {
-      setProcessbar(false);
-    }, 1000);
-  };
-  window.addEventListener("scroll", handleOnScroll);
+
+  // window.addEventListener("scroll", handleOnScroll);
+
   return (
     <div className="flex flex-col">
       <Header login={Boolean(logincheck)} />
