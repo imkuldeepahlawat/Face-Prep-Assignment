@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 "use client";
 import { useRouter } from "next/navigation";
+=======
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+>>>>>>> e80da20fd47709694cf5306c779c6eb7d47088e3
 
 type HeaderProps = {
   login: boolean;
@@ -11,8 +16,14 @@ type HeaderProps = {
  * @returns {React.ReactElement} - The rendered header component.
  */
 const Header = (props: HeaderProps): React.ReactElement => {
+<<<<<<< HEAD
   const { login } = props;
   const router = useRouter();
+=======
+  const navigate = useNavigate();
+
+  const { login } = props;
+>>>>>>> e80da20fd47709694cf5306c779c6eb7d47088e3
 
   /**
    * Handles the logout functionality.
@@ -23,7 +34,11 @@ const Header = (props: HeaderProps): React.ReactElement => {
   };
 
   return (
+<<<<<<< HEAD
     <div className="w-full mb-5">
+=======
+    <div className="w-full">
+>>>>>>> e80da20fd47709694cf5306c779c6eb7d47088e3
       <div className="flex max-w-full justify-between pl-20 pr-20 pt-5 text-lg font-bold">
         {login ? (
           <>
