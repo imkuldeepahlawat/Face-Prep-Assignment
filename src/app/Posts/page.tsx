@@ -12,6 +12,7 @@ import Header from "../../Components/Header/Header";
  * The page component fetches user data from an API and displays a button to load more data.
  */
 const Page = () => {
+  const debounce = require('lodash.debounce');
   const [userData, setUserData] = useState<any[]>([]); // Specify the type as 'empty array'
   const [userPage, setUserPage] = useState<number>(0); // Specify the type as 'number'
   const [processBar, setProcessbar] = useState<boolean>(false); // Specify the type as 'number'
@@ -42,13 +43,13 @@ const Page = () => {
 
     fetchData();
 
-    const handleOnScroll = () => {
+    const handleOnScroll = debounce(() => {
       setUserPage(userPage + 1);
       setProcessbar(true);
       setTimeout(() => {
         setProcessbar(false);
       }, 1000);
-    };
+    },1000);
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", handleOnScroll);
     }
